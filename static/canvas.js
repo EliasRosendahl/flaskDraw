@@ -1,5 +1,9 @@
 
 
+
+var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+
 var c = document.getElementById("canvasObj");
 var context = c.getContext("2d");
 
@@ -24,4 +28,6 @@ c.addEventListener("click", function(){
             imgDataDiff.data[index] = imgDataNew.data[index];
         }
     }
+
+    socket.emit('diff', imgDataDiff);
 });

@@ -1,8 +1,15 @@
 from flask import Flask
-app = Flask(__name__)
+from flask_socketio import SocketIO
 
-from flaskDraw.flaskDraw.canvasView import renderCanvas
+app = Flask(__name__)
+socketio = SocketIO(app)
+
+from flaskDraw.canvasView import renderCanvas
 
 @app.route("/")
 def index():
     return renderCanvas("foo")
+
+
+if __name__ == '__main__':
+    app.run()
