@@ -3,6 +3,15 @@
 var c = document.getElementById("canvasObj");
 var context = c.getContext("2d");
 
-context.fillRect(10, 10, 150, 150);
+c.addEventListener("click", function(){
+    console.log("click");
+    var x = event.x;
+    var y = event.y;
 
-console.log("test");
+    x -= c.offsetLeft;
+    y -= c.offsetTop;
+
+    context.fillRect(x, y, 10, 10);
+
+    console.log(x + y);
+});
