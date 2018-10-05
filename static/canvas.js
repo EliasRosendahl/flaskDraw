@@ -31,3 +31,7 @@ c.addEventListener("click", function(){
 
     socket.emit('diff', imgDataDiff);
 });
+
+socket.on('new diff', function(imgDataDiff){
+    console.log(imgDataDiff);
+});
