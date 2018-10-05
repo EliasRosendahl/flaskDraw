@@ -3,8 +3,15 @@
 <html>
     <head>
         <title>index</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script type="text/javascript" src="{{url_for('static', filename='canvas.js')}}"></script>
     </head>
     <body>
         <p>test</p>
+        <div id="content" class="content">
+            <label for="canvasObj">
+                <canvas id="canvasObj", class="canvasObj" width="720" height="480"></canvas>
+            </label>
+        </div>
     </body>
 </html>
