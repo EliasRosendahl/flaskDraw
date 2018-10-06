@@ -33,5 +33,11 @@ c.addEventListener("click", function(){
 });
 
 socket.on('new diff', function(imgDataDiff){
-    console.log(imgDataDiff);
+    var imgData = context.getImageData(0, 0, 720, 480);
+
+    //Aplies each new value in imgDataDiff to the canvas
+    for(i in imgDataDiff.data){
+        imgData.data[i] = imgDataDiff.data[i];
+    };
+    context.putImageData(imgData, 0, 0);
 });
