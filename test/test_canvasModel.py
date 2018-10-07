@@ -8,5 +8,5 @@ class test_canvasModel(unittest.TestCase):
         self.canvasModel = CanvasModel()
 
     def test_newCanvasModel(self):
-        testImgData = json.loads('{"width": "720", "height": "480", "data": "{}"}')
-        self.assertEqual(testImgData, self.canvasModel.canvas)
+        self.assertEqual(720, self.canvasModel.canvas["width"])
+        self.assertEqual(480, self.canvasModel.canvas["height"])

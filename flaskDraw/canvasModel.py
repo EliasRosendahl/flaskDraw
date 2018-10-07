@@ -7,10 +7,11 @@ class CanvasModel(object):
         self.canvas_ = {
             "width": 720,
             "height": 480,
-            "data": {}
+            "data": dict.fromkeys(range(0, 10), 0)
         }
         # Empty data should be populated using dict comprehension
         
+
     def get_canvas(self):
         return json.loads(json.dumps(self.canvas_))
 
@@ -18,3 +19,6 @@ class CanvasModel(object):
         pass
 
     canvas = property(get_canvas, set_canvas)
+
+test = CanvasModel()
+pass
