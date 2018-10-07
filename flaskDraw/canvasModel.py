@@ -19,6 +19,3 @@ class CanvasModel(object):
         pass
 
     canvas = property(get_canvas, set_canvas)
-
-test = CanvasModel()
-pass
